@@ -1,4 +1,4 @@
-# RoboTact - Open-Source Robotics Learning Platform [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+# RoboTact [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ![RoboTact Logo](https://via.placeholder.com/150) *(Consider adding a logo here)*
 
