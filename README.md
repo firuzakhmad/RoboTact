@@ -1,4 +1,4 @@
-# RoboTact - Open-Source Robotics Learning Platform
+# RoboTact - Open-Source Robotics Learning Platform [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ![RoboTact Logo](https://via.placeholder.com/150) *(Consider adding a logo here)*
 
@@ -66,4 +66,4 @@ Support
 For help, please open an issue.
 License
 
-RoboTact is released under the MIT License - see ![LICENSE]([https://via.placeholder.com/150](https://github.com/firuzakhmad/RoboTact/blob/main/README.md))* for details.
+RoboTact is released under the MIT License - see [LICENSE](LICENSE) for details.
