@@ -2,7 +2,9 @@
 #define WINDOW_SETTINGS_HPP
 
 #include <glm/glm.hpp>
+
 #include <string>
+#include <iostream>
 
 namespace RoboTact::Config {
 

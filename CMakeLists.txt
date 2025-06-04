@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.16)
-project(RoboTact VERSION 1.0.0 LANGUAGES CXX C)
 
 #-------------------------------------------------------------------------------
 # CMake Policies
@@ -93,6 +92,8 @@ endif()
 #-------------------------------------------------------------------------------
 # GLM (Mathematics Library)
 #-------------------------------------------------------------------------------
+
+set(GLM_FORCE_CMAKE_DEPRECATION_WARNINGS OFF CACHE BOOL "" FORCE)
 
 # Only fetch GLM if not already available
 if(NOT TARGET glm)

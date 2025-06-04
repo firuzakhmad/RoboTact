@@ -4,6 +4,8 @@
 #include "panel.hpp"
 #include "../controllers/robot_controller.hpp"
 
+#include <memory> 
+
 namespace RoboTact::UI {
 
 /**
