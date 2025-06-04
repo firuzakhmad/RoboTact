@@ -26,5 +26,44 @@ RoboTact is an open-source GUI application designed to make robotics education a
 git clone https://github.com/firuzakhmad/RoboTact.git
 cd RoboTact
 mkdir build && cd build
-cmake .. -G "Visual Studio 17 2022" -A x64
+cmake .. -G "MinGW Makefiles"
 cmake --build . --config Release
+```
+
+#### macOS
+```bash
+git clone https://github.com/firuzakhmad/RoboTact.git
+cd RoboTact
+mkdir build && cd build
+cmake -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release
+```
+
+#### Linux
+```bash
+git clone https://github.com/firuzakhmad/RoboTact.git
+cd RoboTact
+mkdir build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j$(nproc)
+```
+
+Running
+
+After building, launch the application from:
+
+    Windows: build/bin/Release/RoboTact.exe
+
+    macOS: build/bin/Release/RoboTact.app
+
+    Linux: build/bin/RoboTact
+
+Contributing
+
+We welcome contributions! Please see our Contribution Guidelines.
+Support
+
+For help, please open an issue.
+License
+
+RoboTact is released under the MIT License - see ![LICENSE]([https://via.placeholder.com/150](https://github.com/firuzakhmad/RoboTact/blob/main/README.md)) for details.
