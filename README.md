@@ -66,4 +66,4 @@ Support
 For help, please open an issue.
 License
 
-RoboTact is released under the MIT License - see [LICENSE](LICENSE) for details.
+RoboTact is released under the MIT License - see [LICENSE](LICENSE.txt) for details.
