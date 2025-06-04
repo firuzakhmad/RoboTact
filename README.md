@@ -34,7 +34,6 @@ cmake --build . --config Release
 ```bash
 git clone https://github.com/firuzakhmad/RoboTact.git
 cd RoboTact
-mkdir build && cd build
 cmake -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release
 ```
