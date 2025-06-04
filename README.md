@@ -46,8 +46,8 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
 ```
 
-Running
 
+### Running
 After building, launch the application from:
 
     Windows: build/bin/Release/RoboTact.exe
@@ -56,8 +56,8 @@ After building, launch the application from:
 
     Linux: build/bin/RoboTact
 
-Contributing
 
+### Contributing
 We welcome contributions! Please see our Contribution Guidelines.
 Support
 
