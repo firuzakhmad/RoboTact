@@ -5,8 +5,8 @@
   </a>
 </p>
 
-
 RoboTact is an open-source GUI application designed to make robotics education accessible to everyone. It provides interactive projects with step-by-step guidance to help users learn robotics concepts hands-on.
+
 
 ## Features
 - Interactive robotics tutorials
