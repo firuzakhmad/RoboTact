@@ -1,7 +1,7 @@
-# RoboTact [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 <div>
   <img src="https://github.com/firuzakhmad/RoboTact/blob/main/assets/images/RoboTact_Logo.png" alt="RoboTact Logo" width="150"/>
 </div>
+
 # RoboTact [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 RoboTact is an open-source GUI application designed to make robotics education accessible to everyone. It provides interactive projects with step-by-step guidance to help users learn robotics concepts hands-on.
