@@ -1,4 +1,5 @@
-<div align="left">
+# RoboTact [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+<div>
   <img src="https://github.com/firuzakhmad/RoboTact/blob/main/assets/images/RoboTact_Logo.png" alt="RoboTact Logo" width="150"/>
 </div>
 # RoboTact [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
