@@ -1,5 +1,5 @@
 <div style="display: flex; gap: 10px;">
-  <img src="https://github.com/firuzakhmad/RoboTact/blob/main/assets/images/RoboTact_Logo.png" alt="RoboTact Logo" width="160"/>
+  <img src="https://github.com/firuzakhmad/RoboTact/blob/main/assets/images/RoboTact_Logo.png" align-items: bottom; alt="RoboTact Logo" width="160"/>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License"/>
   </a>
