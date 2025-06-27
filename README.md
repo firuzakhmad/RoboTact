@@ -1,9 +1,10 @@
-<div style="display: flex; align-items: flex-end; gap: 10px;">
-  <img src="https://github.com/firuzakhmad/RoboTact/blob/main/assets/images/RoboTact_Logo.png" align-items: bottom; alt="RoboTact Logo" width="160"/>
-  <a href="LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License"/>
-  </a>
-</div>
+<table>
+  <tr>
+    <td><img src="https://github.com/firuzakhmad/RoboTact/blob/main/assets/images/RoboTact_Logo.png" alt="RoboTact Logo" width="160"/></td>
+    <td valign="bottom"><a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License"/></a></td>
+  </tr>
+</table>
+
 
 RoboTact is an open-source GUI application designed to make robotics education accessible to everyone. It provides interactive projects with step-by-step guidance to help users learn robotics concepts hands-on.
 
