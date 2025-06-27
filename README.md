@@ -1,5 +1,5 @@
 <p>
-  <img src="https://raw.githubusercontent.com/firuzakhmad/RoboTact/main/assets/images/RoboTact_Logo.png" alt="RoboTact Logo" width="160" style="vertical-align: bottom;"/>
+  <img src="https://github.com/firuzakhmad/RoboTact/blob/main/assets/images/RoboTact_Logo.png" alt="RoboTact Logo" width="160" style="vertical-align: bottom;"/>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" style="vertical-align: bottom;"/>
   </a>
