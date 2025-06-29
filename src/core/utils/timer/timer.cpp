@@ -50,17 +50,17 @@ void Timer::consume_accumulated_time(double time)
 		std::memory_order_relaxed);
 }
 
-double Timer::get_delta_time() const 
+double Timer::get_delta_time() const noexcept
 {
 	return m_delta_time.load(std::memory_order_relaxed);
 }
 
-double Timer::get_elapsed_time() const 
+double Timer::get_elapsed_time() const noexcept
 {
 	return m_elapsed_time.load(std::memory_order_relaxed);
 }
 
-double Timer::get_accumulated_time() const 
+double Timer::get_accumulated_time() const noexcept
 {
 	return m_accumulated_time.load(std::memory_order_relaxed);
 }

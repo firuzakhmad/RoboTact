@@ -54,19 +54,19 @@ public:
      * @brief Get time since last update (in seconds)
      * @return Delta time in seconds with nanosecond precision
      */
-    virtual double get_delta_time() const = 0;
+    virtual double get_delta_time() const noexcept = 0;
 
     /**
      * @brief Get total elapsed time since last reset (in seconds)
      * @return Elapsed time in seconds with nanosecond precision
      */
-    virtual double get_elapsed_time() const = 0;
+    virtual double get_elapsed_time() const noexcept = 0;
 
     /**
      * @brief Get accumulated time for fixed timestep simulations
      * @return Accumulated time in seconds
      */
-    virtual double get_accumulated_time() const = 0;
+    virtual double get_accumulated_time() const noexcept = 0;
 };
 
 /**
@@ -109,17 +109,17 @@ public:
     /**
      * @copydoc ITimer::get_delta_time
      */
-    double get_delta_time() const override;
+    double get_delta_time() const noexcept override;
 
     /**
      * @copydoc ITimer::get_elapsed_time
      */
-    double get_elapsed_time() const override;
+    double get_elapsed_time() const noexcept override;
 
     /**
      * @copydoc ITimer::get_accumulated_time
      */
-    double get_accumulated_time() const override;
+    double get_accumulated_time() const noexcept override;
 	
 private:
     using Clock = std::chrono::high_resolution_clock;
@@ -145,9 +145,9 @@ public:
     void reset() override {}
     void update() override {}
     void consume_accumulated_time(double) override {}
-    double get_delta_time() const override { return 0.016667; } // 60 FPS
-    double get_elapsed_time() const override { return 0.0; }
-    double get_accumulated_time() const override { return 0.0; }
+    double get_delta_time() const noexcept override { return 0.016667; } // 60 FPS
+    double get_elapsed_time() const noexcept override { return 0.0; }
+    double get_accumulated_time() const noexcept override { return 0.0; }
 };
 
 } // namespace RoboTact::Core
