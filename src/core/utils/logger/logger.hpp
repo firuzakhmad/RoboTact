@@ -74,7 +74,7 @@ public:
      */
     virtual void log(LogLevel level, const std::string& message) = 0;
 
-private:
+protected:
 	/**
      * @brief Converts a single argument to its string representation.
      * 

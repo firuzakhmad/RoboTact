@@ -4,11 +4,8 @@ project(RoboTact VERSION 1.0.0 LANGUAGES CXX C)
 #-------------------------------------------------------------------------------
 # CMake Policies
 #-------------------------------------------------------------------------------
-
-# Modern policy settings
-cmake_policy(SET CMP0077 NEW)  # Honor BUILD_SHARED_LIBS for imported targets
-cmake_policy(SET CMP0135 NEW)  # Proper handling of FetchContent dependencies
-#cmake_policy(SET CMP0148 NEW)  # Handle Python components properly
+cmake_policy(SET CMP0077 NEW)  
+cmake_policy(SET CMP0135 NEW)  
  
 #-------------------------------------------------------------------------------
 # Compiler Configuration
@@ -72,7 +69,7 @@ if(NOT ROBOTACT_USE_SYSTEM_DEPS OR ROBOTACT_FORCE_FETCH_DEPS)
     set(BUILD_PERF_TESTS OFF CACHE BOOL "" FORCE)
     set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
     set(BUILD_opencv_world OFF CACHE BOOL "" FORCE)
-    set(OPENCV_DISABLE_ARCH_PATH ON CACHE BOOL "" FORCE)  # Important for macOS
+    set(OPENCV_DISABLE_ARCH_PATH ON CACHE BOOL "" FORCE)  
 
     # Fetch OpenCV and contrib
     FetchContent_Declare(
@@ -111,9 +108,9 @@ if(NOT ROBOTACT_USE_SYSTEM_DEPS OR ROBOTACT_FORCE_FETCH_DEPS)
         # Create imported target
         add_library(OpenCV::OpenCV INTERFACE IMPORTED)
         target_include_directories(OpenCV::OpenCV INTERFACE
-    ${OPENCV_INCLUDE_DIRS}
-    ${opencv_BINARY_DIR}  # Add this line
-)
+                ${OPENCV_INCLUDE_DIRS}
+                ${opencv_BINARY_DIR}  
+        )
         target_link_libraries(OpenCV::OpenCV INTERFACE
                 opencv_core
                 opencv_imgproc
@@ -163,12 +160,12 @@ if(NOT ROBOTACT_USE_SYSTEM_DEPS OR ROBOTACT_FORCE_FETCH_DEPS)
     FetchContent_Declare(
         sdl2
         GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
-        GIT_TAG release-2.32.8  # Use a stable release
+        GIT_TAG release-2.32.8
         GIT_SHALLOW TRUE
     )
-    # Force static build unless shared is explicitly wanted
+    
     set(SDL_SHARED ${BUILD_SHARED_LIBS} CACHE BOOL "" FORCE)
-    set(SDL_STATIC ON CACHE BOOL "" FORCE)  # Prefer static linking
+    set(SDL_STATIC ON CACHE BOOL "" FORCE) 
     FetchContent_MakeAvailable(sdl2)
 else()
     find_package(SDL2 REQUIRED)
@@ -254,7 +251,7 @@ if(NOT ROBOTACT_USE_SYSTEM_DEPS OR ROBOTACT_FORCE_FETCH_DEPS)
             GIT_TAG 9.0.0
             GIT_SHALLOW TRUE
     )
-    # TinyXML-2 build options
+    
     set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
     set(BUILD_TESTING OFF CACHE BOOL "" FORCE)
     FetchContent_MakeAvailable(tinyxml2)
@@ -307,17 +304,12 @@ target_include_directories(RoboTact PRIVATE
 if(APPLE)
     message(STATUS "Configuring macOS-specific frameworks and sources")
 
-    # macOS Frameworks required for AVFoundation and camera access
+    # MacOS Frameworks required for AVFoundation and camera access
     find_library(COCOA_LIBRARY Cocoa)
     find_library(IOKIT_LIBRARY IOKit)
     find_library(COREVIDEO_LIBRARY CoreVideo)
     find_library(AVFOUNDATION_LIBRARY AVFoundation)
     find_library(COREMEDIA_LIBRARY CoreMedia)
-
-#     # Add .mm source file for Objective-C++ camera backend
-#     target_sources(RoboTact PRIVATE
-#             ${PROJECT_SOURCE_DIR}/src/camera/camera_devices_mac.mm
-#     )
 
     # Link all required macOS frameworks
     target_link_libraries(RoboTact PRIVATE
@@ -338,8 +330,8 @@ target_link_libraries(RoboTact PRIVATE
         stb_image
         glm
         OpenGL::GL
-        nlohmann_json::nlohmann_json  # JSON support
-        tinyxml2                      # XML support
+        nlohmann_json::nlohmann_json  
+        tinyxml2                      
 )
 
 #-------------------------------------------------------------------------------
