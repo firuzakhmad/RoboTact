@@ -1,8 +1,6 @@
 #ifndef SERVICE_LOCATOR_HPP
 #define SERVICE_LOCATOR_HPP
 
-#include "core/utils/logger/logger.hpp"
-
 #include <memory>
 #include <unordered_map>
 #include <mutex>
