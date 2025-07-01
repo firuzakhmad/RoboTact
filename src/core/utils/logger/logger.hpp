@@ -21,7 +21,6 @@
 #include <iomanip>
 #include <memory>
 #include <atomic>
-#include <format>
 
 namespace RoboTact::Core
 {
@@ -34,7 +33,7 @@ namespace RoboTact::Core
  */
 enum class LogLevel
 {
-	TRACE,   
+    TRACE,   
     DEBUG,   
     INFO,    
     WARNING, 
@@ -52,20 +51,20 @@ enum class LogLevel
 class ILogger
 {
 public: 
-	virtual ~ILogger() = default;
+    virtual ~ILogger() = default;
 
-	/**
-	 * @brief Initialize the logger
-	 * @param file_name Path to log file (emtpy for no file logging)
-	 * @param level Minimum severity level to log
-	 */
-	virtual void init(const std::string& file_name, LogLevel level = LogLevel::INFO) = 0;
+    /**
+     * @brief Initialize the logger
+     * @param file_name Path to log file (emtpy for no file logging)
+     * @param level Minimum severity level to log
+     */
+    virtual void init(const std::string& file_name, LogLevel level = LogLevel::INFO) = 0;
 
-	/**
-	 * @brief Set the minimum log level
-	 * @param level Message below this level will be filtered
-	 */
-	virtual void set_log_level(LogLevel level) = 0; 
+    /**
+     * @brief Set the minimum log level
+     * @param level Message below this level will be filtered
+     */
+    virtual void set_log_level(LogLevel level) = 0; 
 
     /**
      * @brief Log a message with specified severity level
@@ -74,8 +73,7 @@ public:
      */
     virtual void log(LogLevel level, const std::string& message) = 0;
 
-protected:
-	/**
+    /**
      * @brief Converts a single argument to its string representation.
      * 
      * Uses stringstream to convert any streamable type into a std::string.
@@ -226,12 +224,26 @@ public:
 };
 
 // Convenience logging macros
-#define LOG_TRACE(...)   logger->log(RoboTact::Core::LogLevel::TRACE, __VA_ARGS__)
-#define LOG_DEBUG(...)   logger->log(RoboTact::Core::LogLevel::DEBUG, __VA_ARGS__)
-#define LOG_INFO(...)    logger->log(RoboTact::Core::LogLevel::INFO, __VA_ARGS__)
-#define LOG_WARNING(...) logger->log(RoboTact::Core::LogLevel::WARNING, __VA_ARGS__)
-#define LOG_ERROR(...)   logger->log(RoboTact::Core::LogLevel::ERROR, __VA_ARGS__)
-#define LOG_FATAL(...)   logger->log(RoboTact::Core::LogLevel::FATAL, __VA_ARGS__)
+#define GET_LOGGER() []()->RoboTact::Core::ILogger& { \
+    static auto& l = *Core::ServiceLocator::resolve<RoboTact::Core::ILogger>(); \
+    return l; \
+}()
+
+#define LOG_IMPL(level, ...)                                     \
+    do {                                                         \
+        auto& logger = GET_LOGGER();                             \
+        logger.log(RoboTact::Core::LogLevel::level,              \
+                   RoboTact::Core::ILogger::Format(__VA_ARGS__));\
+    } while (0)
+
+#define LOG_TRACE(...)   LOG_IMPL(TRACE, __VA_ARGS__)
+#define LOG_DEBUG(...)   LOG_IMPL(DEBUG, __VA_ARGS__)
+#define LOG_INFO(...)    LOG_IMPL(INFO, __VA_ARGS__)
+#define LOG_WARNING(...) LOG_IMPL(WARNING, __VA_ARGS__)
+#define LOG_ERROR(...)   LOG_IMPL(ERROR, __VA_ARGS__)
+#define LOG_FATAL(...)   LOG_IMPL(FATAL, __VA_ARGS__)
+
+
 
 } // namespace RoboTact::Core
 
