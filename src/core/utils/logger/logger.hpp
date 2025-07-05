@@ -117,7 +117,7 @@ public:
  * Supports simultaneous console (with color) and file output with configurable
  * log level filtering.
  */
-class Logger : public ILogger 
+class Logger final : public ILogger 
 {
 public:
     /**
@@ -215,7 +215,7 @@ private:
  * 
  * Provides a no-op logger for testing or when logging needs to be disabled.
  */
-class NullLogger : public ILogger 
+class NullLogger final : public ILogger 
 {
 public:
     void init(const std::string&, LogLevel) override {}

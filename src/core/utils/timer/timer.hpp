@@ -76,7 +76,7 @@ public:
  * Provides precise timing measurements suitable for application and game loops,
  * physics simulations, and performance profiling.
  */
-class Timer : public ITimer
+class Timer final : public ITimer
 {
 public:
 	/**
@@ -140,7 +140,7 @@ private:
  * 
  * Provides predictable timing values for unit testing
  */
-class MockTimer : public ITimer {
+class MockTimer final : public ITimer {
 public:
     void reset() override {}
     void update() override {}
